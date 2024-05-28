@@ -1,0 +1,25 @@
+﻿<Window x:Class="DirectorySync.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DirectorySync"
+        mc:Ignorable="d"
+        Title="Directory Synchronizer" Height="387" Width="679" Closing="Window_Closing">
+    <TabControl>
+        <TabItem x:Name="tabMain" Header="Main">
+            <Grid Background="#FFE5E5E5">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="74*"/>
+                    <ColumnDefinition Width="599*"/>
+                </Grid.ColumnDefinitions>
+                <DataGrid x:Name="grid" d:ItemsSource="{d:SampleData ItemCount=5}" Margin="0,0,0,210" Grid.ColumnSpan="2"/>
+                <Button x:Name="btSync" Content="Sync" HorizontalAlignment="Left" Height="39" Margin="10,0,0,10" VerticalAlignment="Bottom" Width="149" Click="btSync_Click" Grid.ColumnSpan="2"/>
+                <TextBox x:Name="tb" HorizontalAlignment="Left" Height="205" Margin="100,0,0,0" TextWrapping="Wrap" VerticalAlignment="Bottom" Width="499" UndoLimit="0" IsEnabled="False" Grid.Column="1"/>
+            </Grid>
+        </TabItem>
+        <TabItem Header="Config">
+            <Grid Background="#FFE5E5E5"/>
+        </TabItem>
+    </TabControl>
+</Window>
